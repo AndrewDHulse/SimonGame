@@ -15,8 +15,8 @@ let playerInput=[];
 let playerTurn=0; 
 
 	/*----- cached elements  -----*/
-const redBtn=;
-const yellowBtn =;
+const redBtn=document.getElementById('red');
+const yellowBtn =getElementById('yellow');
 const greenBtn =;
 const blueBtn=;
 const playAgainBtn=;
