@@ -6,6 +6,7 @@ const sounds= {
     blue:,
     green:,
 	wrongAnswer:,
+	theme:,
 };
 
 	/*----- state variables -----*/
