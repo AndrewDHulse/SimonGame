@@ -1,0 +1,70 @@
+h1{
+    text-align: center;
+}
+.board {
+    border-radius: 50%;
+    height: 350px;
+    width: 350px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  
+  .board div {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+#yellow{
+    background-color: yellow;
+    border-top-left-radius: 100%;
+    top: 0%;
+    left: 0%;
+    border: solid black  ;
+}
+
+#red {
+    background-color: red;
+    border-top-right-radius: 100%;
+    top:0;
+    right: 0;
+    border: solid black;
+}
+
+#blue {
+    background-color: blue;
+    bottom: 0;
+    left: 0;
+    border-bottom-left-radius: 100%;
+    border: solid black;
+}
+
+#green {
+    background-color: green;
+    bottom: 0;
+    right: 0;
+    border-bottom-right-radius: 100%;
+    border: solid black;
+}
+
+#gameInfo {
+    background-color: black;
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 25px;
+}
