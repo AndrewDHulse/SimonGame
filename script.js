@@ -1,5 +1,10 @@
 	/*----- constants -----*/
-const colors = ['red', 'yellow', 'green', 'blue']
+const colors = {
+1:'red', 
+2:'yellow',
+3:'green',
+4:'blue',
+}
 const sounds= {
     red:,
     yellow:,
@@ -17,16 +22,16 @@ let playerTurn=0;
 
 	/*----- cached elements  -----*/
 const redBtn=document.getElementById('red');
-const yellowBtn =getElementById('yellow');
-const greenBtn =getElementById('green');
-const blueBtn=getElementById('blue');
-const playAgainBtn=getElementById('gameInfo');
+const yellowBtn =document.getElementById('yellow');
+const greenBtn =document.getElementById('green');
+const blueBtn=document.getElementById('blue');
+const playAgainBtn=document.getElementById('gameInfo');
 	/*----- event listeners -----*/
-redBtn;
-yellowBtn;
-greenBtn;
-blueBtn;
-playAgainBtn;
+redBtn.addEventListener('click', handleClick);
+yellowBtn.addEventListener('click', handleClick);
+greenBtn.addEventListener('click', handleClick);
+blueBtn.addEventListener('click', handleClick);
+playAgainBtn.addEventListener('click', handleClick);
 
 	/*----- functions -----*/
 inititialize();
@@ -35,11 +40,19 @@ function inititialize(){
 
 }
 
-function handleClick(){
-
+function handleClick(evt){
+const selectedColor=evt.target.id;
+	playerInput.push(colors);
+	playSound(colors);
+	checkInput();
+	render();
 }
 
 function generateFlash(){
+	const flash = Math.floor(math.random() * 4) + 1;
+	sequence.push(flash);
+	playSound();
+
 
 }
 
@@ -49,6 +62,11 @@ function playSequence(){
 
 function checkInput(){
 
+}
+
+function playSound(color){
+	const audioEl=document.getElementById(color + '-tone');
+	audioEl.play();
 }
 
 function render(){
