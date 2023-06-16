@@ -5,22 +5,14 @@ const colors = {
 3:'green',
 4:'blue',
 }
-const sounds= {
-    red:,
-    yellow:,
-    blue:,
-    green:,
-	wrongAnswer:,
-	theme:,
-};
-
 	/*----- state variables -----*/
 let level= 1;
 let sequence=[];
 let playerInput=[];
-let playerTurn=0; 
+let playerTurn=0; //0, not in play; 1, computer turn; 2 human turn
 
 	/*----- cached elements  -----*/
+const messageEl=document.getElementById('gameInfo')
 const redBtn=document.getElementById('red');
 const yellowBtn =document.getElementById('yellow');
 const greenBtn =document.getElementById('green');
@@ -37,13 +29,14 @@ playAgainBtn.addEventListener('click', handleClick);
 inititialize();
 
 function inititialize(){
-
+	playerTurn=0
+	render();
 }
 
 function handleClick(evt){
 const selectedColor=evt.target.id;
-	playerInput.push(colors);
-	playSound(colors);
+	playerInput.push(colors[selectedColor]);
+	playSound(selectedColor);
 	checkInput();
 	render();
 }
@@ -51,7 +44,7 @@ const selectedColor=evt.target.id;
 function generateFlash(){
 	const flash = Math.floor(math.random() * 4) + 1;
 	sequence.push(flash);
-	playSound();
+	playSound(colors[flash]);
 
 
 }
@@ -66,12 +59,29 @@ function checkInput(){
 
 function playSound(color){
 	const audioEl=document.getElementById(color + '-tone');
+	audioEl.currentTime=0;
 	audioEl.play();
 }
 
 function render(){
+	renderBoard()
+	renderMessage()
+}
+
+function renderBoard(){
 
 }
+
+function renderMessage(){
+	if(playerTurn=== 0){
+		messageEl.innerText='wanna play?';
+	} else if (playerTurn === 1) { 
+		messageEl.innerText= `Level ${level}`
+	} else{
+		messageEl.innerText='your turn!'
+	}
+	}
+
 
 function gameOver(){
 
