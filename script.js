@@ -1,10 +1,10 @@
-	/*----- constants -----*/
+		/*----- constants -----*/
 const colors = {
 1:'red', 
 2:'yellow',
 3:'green',
 4:'blue',
-}
+};
 	/*----- state variables -----*/
 let level= 1;
 let sequence=[];
@@ -23,13 +23,16 @@ redBtn.addEventListener('click', handleClick);
 yellowBtn.addEventListener('click', handleClick);
 greenBtn.addEventListener('click', handleClick);
 blueBtn.addEventListener('click', handleClick);
-playAgainBtn.addEventListener('click', handleClick);
+playAgainBtn.addEventListener('click', handlePlayBtn);
 
 	/*----- functions -----*/
-inititialize();
+init()
 
-function inititialize(){
-	playerTurn=0
+function init(){
+	level = 1;
+	playerTurn=0;
+	sequence= [];
+	playerInput= [];
 	render();
 }
 
@@ -39,19 +42,49 @@ const selectedColor=evt.target.id;
 	playSound(selectedColor);
 	checkInput();
 	render();
+	
+}
+
+function handlePlayBtn(){
+	const audioEl=document.getElementById('theme-tone');
+
+	if (playerTurn ===0){
+		audioEl.play();
+		init();
+		playerTurn = 1;
+		setTimeout(generateFlash, 2000);
+	}
 }
 
 function generateFlash(){
-	const flash = Math.floor(math.random() * 4) + 1;
+	const flash = Math.floor(Math.random() * 4) + 1;
 	sequence.push(flash);
 	playSound(colors[flash]);
+	
 
+
+	if (sequence.length === level){
+		playerTurn =2;
+		playerInput =[];
+		render();
+		playSequence();
+	}
 
 }
 
-function playSequence(){
 
-}
+function playSequence() {
+	let i = 0;
+	const interval = setInterval(() => {
+	i++;
+	if (i === sequence.length) {
+		playerTurn = 2;
+		playerInput = [];
+		render();
+		clearInterval(interval);
+	  }
+	}, 1000);
+  }
 
 function checkInput(){
 
@@ -59,13 +92,18 @@ function checkInput(){
 
 function playSound(color){
 	const audioEl=document.getElementById(color + '-tone');
+	const cellEl=document.getElementById(color);
+	
+	cellEl.id= ('highlight-'+ color);
+	
 	audioEl.currentTime=0;
 	audioEl.play();
+
 }
 
 function render(){
-	renderBoard()
-	renderMessage()
+	renderBoard();
+	renderMessage();
 }
 
 function renderBoard(){
@@ -74,15 +112,17 @@ function renderBoard(){
 
 function renderMessage(){
 	if(playerTurn=== 0){
-		messageEl.innerText='wanna play?';
+		messageEl.innerText=`Wanna
+		Play?`;
 	} else if (playerTurn === 1) { 
-		messageEl.innerText= `Level ${level}`
+		messageEl.innerText= `Level ${level}
+		Listen!`;
 	} else{
-		messageEl.innerText='your turn!'
-	}
+	messageEl.innerText=`Level ${level}
+		your turn!`;
+		}
 	}
 
 
 function gameOver(){
-
 }
