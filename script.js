@@ -38,11 +38,15 @@ function init(){
 
 function handleClick(evt){
 const selectedColor=evt.target.id;
-	playerInput.push(colors[selectedColor]);
+const colorKey=getKey(colors,selectedColor);
+	playerInput.push(parseInt(colorKey));
 	playSound(selectedColor);
 	checkInput();
 	render();
-	
+
+function getKey(obj, value){
+	return Object.keys(obj).find((key) => obj[key]===value);
+}
 }
 
 function handlePlayBtn(){
@@ -60,8 +64,6 @@ function generateFlash(){
 	const flash = Math.floor(Math.random() * 4) + 1;
 	sequence.push(flash);
 	playSound(colors[flash]);
-	
-
 
 	if (sequence.length === level){
 		playerTurn =2;
@@ -71,7 +73,6 @@ function generateFlash(){
 	}
 
 }
-
 
 function playSequence() {
 	let i = 0;
@@ -85,29 +86,23 @@ function playSequence() {
 	  }
 	}, 1000);
   }
+  function checkInput() {
 
-function checkInput(){
-
-}
-
+  }
 function playSound(color){
 	const audioEl=document.getElementById(color + '-tone');
 	const cellEl=document.getElementById(color);
-	
+	const dullColor=cellEl.id
 	cellEl.id= ('highlight-'+ color);
-	
 	audioEl.currentTime=0;
 	audioEl.play();
-
+	setTimeout(function(){
+		cellEl.id=dullColor;
+	}, 500);
 }
 
 function render(){
-	renderBoard();
 	renderMessage();
-}
-
-function renderBoard(){
-
 }
 
 function renderMessage(){
@@ -125,4 +120,11 @@ function renderMessage(){
 
 
 function gameOver(){
+	playerTurn=0
+	playerInput= []
+	sequence= []
 }
+
+
+console.log(playerInput);
+console.log(sequence);
