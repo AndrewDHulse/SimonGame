@@ -1,4 +1,8 @@
-		/*----- constants -----*/
+//tasks to complete
+//check arrays on level 2
+//fix figure out why whole sequence array isnt playing
+
+/*----- constants -----*/
 const colors = {
 1:'red', 
 2:'yellow',
@@ -46,7 +50,7 @@ const colorKey=getKey(colors,selectedColor);
 
 function getKey(obj, value){
 	return Object.keys(obj).find((key) => obj[key]===value);
-}
+	}
 }
 
 function handlePlayBtn(){
@@ -71,7 +75,6 @@ function generateFlash(){
 		render();
 		playSequence();
 	}
-
 }
 
 function playSequence() {
@@ -87,8 +90,22 @@ function playSequence() {
 	}, 1000);
   }
   function checkInput() {
-
+	  function checkArr(arr1, arr2) {
+		return arr1.every((value, index) => value === arr2[index]);
+	  }
+	if (playerInput.length === sequence.length) {
+	  if (checkArr(playerInput, sequence)) {
+		level++;
+		playerTurn = 1;
+		playerInput = [];
+		setTimeout(generateFlash, 1000);
+	  } else {
+		gameOver();
+		render();
+	  }
+	}
   }
+
 function playSound(color){
 	const audioEl=document.getElementById(color + '-tone');
 	const cellEl=document.getElementById(color);
@@ -112,7 +129,7 @@ function renderMessage(){
 	} else if (playerTurn === 1) { 
 		messageEl.innerText= `Level ${level}
 		Listen!`;
-	} else{
+	} else if (playerTurn===2){
 	messageEl.innerText=`Level ${level}
 		your turn!`;
 		}
