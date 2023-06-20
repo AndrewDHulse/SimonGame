@@ -15,7 +15,8 @@ h1{
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    border: inset;
+    border: inset silver;
+    border-width: 3vmin;
 }
   
 .board div {
@@ -28,15 +29,7 @@ h1{
 }
 
 .board div:hover {
-    transform: scale(1.05);
-}
-
-#yellow{
-    background-color: rgb(185, 185, 109);
-    border-top-left-radius: 100%;
-    top: 0%;
-    left: 0%;
-    border: solid black  ;
+    transform: scale(1.02);
 }
 
 #red {
@@ -44,15 +37,18 @@ h1{
     border-top-right-radius: 100%;
     top:0;
     right: 0;
-    border: solid black;
+    border:solid black;
+    border-top: 0;
+    border-right: 0;
 }
-
-#blue {
-    background-color: rgb(123, 123, 235);
-    bottom: 0;
-    left: 0;
-    border-bottom-left-radius: 100%;
-    border: solid black;
+#yellow{
+    background-color: rgb(185, 185, 109);
+    border-top-left-radius: 100%;
+    top: 0%;
+    left: 0%;
+    border: solid black  ;
+    border-top: 0;
+    border-left: 0;
 }
 
 #green {
@@ -60,8 +56,21 @@ h1{
     bottom: 0;
     right: 0;
     border-bottom-right-radius: 100%;
-    border: solid black;
+    border:solid black;
+    border-bottom: 0;
+    border-right: 0;
 }
+
+#blue {
+    background-color: rgb(123, 123, 235);
+    bottom: 0;
+    left: 0;
+    border-bottom-left-radius: 100%;
+    border:solid black;
+    border-bottom: 0;
+    border-left: 0;
+}
+
 
 #gameInfo {
     background-color: black;
@@ -77,7 +86,8 @@ h1{
     align-items: center;
     text-align: center;
     font-size: 25px;
-    border: inset rgb(255, 255, 255);
+    border: inset silver;
+    border-width: 1vmin;
 }
 
 #highlight-red{
@@ -87,24 +97,8 @@ h1{
     right: 0;
     border: solid black;
     box-shadow: 20px -25px 150px 10px red;
-}
-
-#highlight-blue {
-    background-color:blue;
-    bottom: 0;
-    left: 0;
-    border-bottom-left-radius: 100%;
-    border: solid black;
-    box-shadow: -20px 25px 150px 10px blue;
-}
-
-#highlight-green{
-    background-color: green;
-    bottom: 0;
-    right: 0;
-    border-bottom-right-radius: 100%;
-    border: solid black;
-    box-shadow: 20px 25px 150px 10px green;
+    border-top: 0;
+    border-right: 0;
 }
 
 #highlight-yellow{
@@ -114,4 +108,28 @@ h1{
     left: 0%;
     border: solid black ;
     box-shadow: -20px -25px 150px 10px yellow;
+    border-top: 0;
+    border-left: 0;
+}
+
+#highlight-green{
+    background-color: green;
+    bottom: 0;
+    right: 0;
+    border-bottom-right-radius: 100%;
+    border: solid black;
+    box-shadow: 20px 25px 150px 10px green;
+    border-bottom: 0;
+    border-right: 0;
+}
+
+#highlight-blue {
+    background-color:blue;
+    bottom: 0;
+    left: 0;
+    border-bottom-left-radius: 100%;
+    border: solid black;
+    box-shadow: -20px 25px 150px 10px blue;
+    border-bottom: 0;
+    border-left: 0;
 }
