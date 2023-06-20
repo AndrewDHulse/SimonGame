@@ -1,7 +1,4 @@
 //tasks to complete next
-//get playerturns to work better. 
-//check render message
-//check player turns in dev tools
 //think about how to make levels faster
 //rework checkInput to immediately end game if a wrong button is pushed
 
@@ -86,29 +83,36 @@ function playSequence() {
 		playSound(color);
 	i++;
 	if (i === sequence.length) {
-		playerTurn = 2;
-		playerInput = [];
-		render();
-		clearInterval(interval);
+		setTimeout(function(){
+			playerTurn = 2;
+			playerInput = [];
+			render();
+			clearInterval(interval);
+		},1000);
 	  }
 	}, 1000);
   }
+
   function checkInput() {
-	  function checkArr(arr1, arr2) {
-		return arr1.every((value, index) => value === arr2[index]);
-	  }
-	if (playerInput.length === sequence.length) {
-	  if (checkArr(playerInput, sequence)) {
-		level++;
-		playerTurn = 1;
-		playerInput = [];
-		setTimeout(generateFlash, 500);
+	  function checkArr(sequence, playerInput) {
+		  return sequence.every((value, index) => value === playerInput[index]);
+		}
+		if (playerInput.length === sequence.length) {
+			if (checkArr(sequence, playerInput)) {
+				level++;
+				playerTurn = 1;
+				playerInput = [];
+				setTimeout(generateFlash, 500);
 	  } else {
 		gameOver();
 		render();
-	  }
 	}
-  }
+}
+if (playerInput.length > 0 && playerInput[playerInput.length-1] !== sequence[playerInput.length-1]){
+	gameOver();
+	render();
+}
+}
 
 function playSound(color){
 	const audioEl=document.getElementById(color + '-tone');
