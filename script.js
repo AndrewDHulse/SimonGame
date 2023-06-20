@@ -102,7 +102,7 @@ function playSequence() {
 		level++;
 		playerTurn = 1;
 		playerInput = [];
-		setTimeout(generateFlash, 1000);
+		setTimeout(generateFlash, 500);
 	  } else {
 		gameOver();
 		render();
