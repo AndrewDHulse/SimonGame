@@ -1,6 +1,9 @@
-//tasks to complete
-//check arrays on level 2
-//fix figure out why whole sequence array isnt playinggit add 
+//tasks to complete next
+//get playerturns to work better. 
+//check render message
+//check player turns in dev tools
+//think about how to make levels faster
+//rework checkInput to immediately end game if a wrong button is pushed
 
 /*----- constants -----*/
 const colors = {
@@ -67,19 +70,20 @@ function handlePlayBtn(){
 function generateFlash(){
 	const flash = Math.floor(Math.random() * 4) + 1;
 	sequence.push(flash);
-	playSound(colors[flash]);
 
 	if (sequence.length === level){
-		playerTurn =2;
 		playerInput =[];
 		render();
 		playSequence();
+		playerTurn =2;
 	}
 }
 
 function playSequence() {
 	let i = 0;
 	const interval = setInterval(() => {
+		const color=colors[sequence[i]];
+		playSound(color);
 	i++;
 	if (i === sequence.length) {
 		playerTurn = 2;
@@ -136,12 +140,15 @@ function renderMessage(){
 	}
 
 
-function gameOver(){
-	playerTurn=0
-	playerInput= []
-	sequence= []
-}
-
+	function gameOver(){
+		playerTurn=0
+		playerInput= []
+		sequence= []
+		const audioEl= document.getElementById(`gameOver-tone`);
+		setTimeout(function(){
+			audioEl.play();
+		},500)
+	}
 
 console.log(playerInput);
 console.log(sequence);
