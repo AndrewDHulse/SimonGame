@@ -7,10 +7,10 @@ h1{
 }
 .board {
     border-radius: 50%;
+    
     height: 350px;
     width: 350px;
     position: relative;
-    /* overflow: hidden; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,22 +18,30 @@ h1{
     border: inset silver;
     border-width: 3vmin;
 }
-  
+
 .board div {
     position: absolute;
     width: 50%;
     height: 50%;
     display: flex;
     justify-content: center;
-
 }
 
 .board div:hover {
+    animation-name: pulse;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
     transform: scale(1.02);
 }
 
+#gameInfo:hover{
+    transform: scale(.95);
+}
+
 #red {
-    background-color: rgb(209, 126, 126);
+    background-color: red;
+    opacity: .50;
     border-top-right-radius: 100%;
     top:0;
     right: 0;
@@ -42,7 +50,8 @@ h1{
     border-right: 0;
 }
 #yellow{
-    background-color: rgb(185, 185, 109);
+    background-color: yellow;
+    opacity: .50;
     border-top-left-radius: 100%;
     top: 0%;
     left: 0%;
@@ -52,7 +61,8 @@ h1{
 }
 
 #green {
-    background-color: rgb(137, 221, 137);
+    background-color: green;
+    opacity: .50;
     bottom: 0;
     right: 0;
     border-bottom-right-radius: 100%;
@@ -62,7 +72,8 @@ h1{
 }
 
 #blue {
-    background-color: rgb(123, 123, 235);
+    background-color: blue;
+    opacity: .5;
     bottom: 0;
     left: 0;
     border-bottom-left-radius: 100%;
@@ -132,4 +143,22 @@ h1{
     box-shadow: -20px 25px 150px 10px blue;
     border-bottom: 0;
     border-left: 0;
+}
+
+
+@keyframes pulse{
+    0%{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(.95);
+    }
+    50%{
+        transform: scale(1)}
+    75%{
+        transform: scale(.95);}
+    100%{
+        transform: scale(1);
+}
+
 }
