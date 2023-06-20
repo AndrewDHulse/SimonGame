@@ -1,6 +1,6 @@
 //tasks to complete
 //check arrays on level 2
-//fix figure out why whole sequence array isnt playing
+//fix figure out why whole sequence array isnt playinggit add 
 
 /*----- constants -----*/
 const colors = {
