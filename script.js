@@ -1,6 +1,5 @@
 //tasks to complete next
 //think about how to make levels faster
-//rework checkInput to immediately end game if a wrong button is pushed
 
 /*----- constants -----*/
 const colors = {
@@ -93,27 +92,28 @@ function playSequence() {
 	}, 1000);
   }
 
-  function checkInput() {
-	  function checkArr(sequence, playerInput) {
-		  return sequence.every((value, index) => value === playerInput[index]);
-		}
-		if (playerInput.length === sequence.length) {
-			if (checkArr(sequence, playerInput)) {
-				level++;
-				playerTurn = 1;
-				playerInput = [];
-				setTimeout(generateFlash, 500);
-	  } else {
-		gameOver();
-		render();
+function checkInput() {
+if (playerTurn !== 0){
+	function checkArr(sequence, playerInput) {
+		return sequence.every((value, index) => value === playerInput[index]);
 	}
-}
-if (playerInput.length > 0 && playerInput[playerInput.length-1] !== sequence[playerInput.length-1]){
+	if (playerInput.length === sequence.length) {
+		if (checkArr(sequence, playerInput)) {
+			level++;
+			playerTurn = 1;
+			playerInput = [];
+			setTimeout(generateFlash, 500);
+	} else {
 	gameOver();
 	render();
+	}
+	}
+	if (playerInput.length > 0 && playerInput[playerInput.length-1] !== sequence[playerInput.length-1]){
+	gameOver();
+	render();
+	}
 }
 }
-
 function playSound(color){
 	const audioEl=document.getElementById(color + '-tone');
 	const cellEl=document.getElementById(color);
