@@ -1,6 +1,3 @@
-//tasks to complete next
-//think about how to make levels faster
-
 /*----- constants -----*/
 const colors = {
 1:'red', 
@@ -13,6 +10,7 @@ let level= 1;
 let sequence=[];
 let playerInput=[];
 let playerTurn=0; //0, not in play; 1, computer turn; 2 human turn
+let difficulty=1000; 
 
 	/*----- cached elements  -----*/
 const messageEl=document.getElementById('gameInfo')
@@ -89,7 +87,7 @@ function playSequence() {
 			clearInterval(interval);
 		},1000);
 	  }
-	}, 1000);
+	}, difficulty);
   }
 
 function checkInput() {
@@ -102,6 +100,7 @@ if (playerTurn !== 0){
 			level++;
 			playerTurn = 1;
 			playerInput = [];
+			difficulty= difficulty -100;
 			setTimeout(generateFlash, 500);
 	} else {
 	gameOver();
