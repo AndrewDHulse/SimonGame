@@ -143,9 +143,11 @@ function renderMessage(){
 	if(playerTurn=== 0){
 		messageEl.innerText=`Wanna
 		Play?`;
+		messageEl.classList.add('idle');
 	} else if (playerTurn === 1) { 
 		messageEl.innerText= `Level ${level}
 		Listen!`;
+		messageEl.classList.remove('idle');
 	} else if (playerTurn===2){
 	messageEl.innerText=`Level ${level}
 		your turn!`;
