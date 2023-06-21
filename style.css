@@ -14,6 +14,14 @@ h1{
     text-align: center;
     margin-left: 75px;
 }
+h2{
+    text-align: center;
+    color: rgb(0,255,65);
+    font-size: 25px;
+    font-family: 'Amatic SC', cursive;
+    font-family: 'Orbitron', sans-serif;
+    box-shadow: 0px 0px 30px 1px rgb(0,255,65);
+}
 .board {
     border-radius: 50%;
     height: 350px;

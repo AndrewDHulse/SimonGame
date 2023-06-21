@@ -11,6 +11,8 @@ let sequence=[];
 let playerInput=[];
 let playerTurn=0; //0, not in play; 1, computer turn; 2 human turn
 let difficulty=1000; 
+let highscore=0;
+let score=0;
 
 	/*----- cached elements  -----*/
 const messageEl=document.getElementById('gameInfo')
@@ -22,6 +24,7 @@ const playAgainBtn=document.getElementById('gameInfo');
 const volumeSlider=document.getElementById('volumeSlider');
 const volumeLabel=document.getElementById('volumeLabel');
 const audioEls=document.querySelectorAll('.tones audio')
+const highscoreEl=document.getElementById('highscore')
 	/*----- event listeners -----*/
 redBtn.addEventListener('click', handleClick);
 yellowBtn.addEventListener('click', handleClick);
@@ -38,6 +41,7 @@ function init(){
 	playerTurn=0;
 	sequence= [];
 	playerInput= [];
+	score=0;
 	renderMessage();
 }
 
@@ -102,6 +106,10 @@ if (playerTurn !== 0){
 	if (playerInput.length === sequence.length) {
 		if (checkArr(sequence, playerInput)) {
 			level++;
+			score++;
+			if (score > highscore){
+				highscore= score;
+			}
 			playerTurn = 1;
 			playerInput = [];
 			if (difficulty > 200){
@@ -142,6 +150,7 @@ function renderMessage(){
 	messageEl.innerText=`Level ${level}
 		your turn!`;
 		}
+	highscoreEl.innerText=`Highscore: ${highscore}`;
 	}
 
 
@@ -154,6 +163,7 @@ function gameOver(){
 	setTimeout(function(){
 		audioEl.play();
 		},500)
+	score=0;
 }
 
 function handleVolumeChange(){
