@@ -156,6 +156,13 @@ h1{
     border-left: 0;
 }
 
+#volumeSlider{
+
+}
+
+#volumeLabel{
+color: white;
+}
 
 @keyframes pulse{
     0%{

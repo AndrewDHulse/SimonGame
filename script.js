@@ -19,12 +19,16 @@ const yellowBtn =document.getElementById('yellow');
 const greenBtn =document.getElementById('green');
 const blueBtn=document.getElementById('blue');
 const playAgainBtn=document.getElementById('gameInfo');
+const volumeSlider=document.getElementById('volumeSlider');
+const volumeLabel=document.getElementById('volumeLabel');
+const audioEls=document.querySelectorAll('.tones audio')
 	/*----- event listeners -----*/
 redBtn.addEventListener('click', handleClick);
 yellowBtn.addEventListener('click', handleClick);
 greenBtn.addEventListener('click', handleClick);
 blueBtn.addEventListener('click', handleClick);
 playAgainBtn.addEventListener('click', handlePlayBtn);
+volumeSlider.addEventListener('input', handleVolumeChange)
 
 	/*----- functions -----*/
 init()
@@ -139,12 +143,23 @@ function renderMessage(){
 	}
 
 
-	function gameOver(){
-		playerTurn=0
-		playerInput= []
-		sequence= []
-		const audioEl= document.getElementById(`gameOver-tone`);
-		setTimeout(function(){
-			audioEl.play();
+function gameOver(){
+	playerTurn=0;
+	playerInput= [];
+	sequence= [];
+	difficulty=1000;
+	const audioEl= document.getElementById(`gameOver-tone`);
+	setTimeout(function(){
+		audioEl.play();
 		},500)
-	}
+}
+
+function handleVolumeChange(){
+	const volume = volumeSlider.value;
+	volumeLabel.textContent = `Volume: ${volume}`
+
+	const volumeValue = volume /100;
+	audioEls.forEach((audio)=>{
+		audio.volume = volumeValue;
+	})
+};
