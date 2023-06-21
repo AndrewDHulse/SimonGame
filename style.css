@@ -156,12 +156,33 @@ h1{
     border-left: 0;
 }
 
-#volumeSlider{
-
+.volControl{
+    display: inline-flex ;
+    position: absolute; 
+    bottom: 0;
+    padding-bottom:5vmin ;
 }
 
 #volumeLabel{
 color: white;
+}
+
+.volPic{
+    width: 5vmin;
+    height: 5vmin;
+}
+
+.volume{ 
+    display: none;
+}
+
+.volume:hover {
+    display: block;
+
+}
+
+.volPic:hover + .volume{
+    display: block;
 }
 
 @keyframes pulse{

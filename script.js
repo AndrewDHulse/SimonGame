@@ -104,7 +104,9 @@ if (playerTurn !== 0){
 			level++;
 			playerTurn = 1;
 			playerInput = [];
-			difficulty= difficulty -100;
+			if (difficulty > 200){
+				difficulty=difficulty-100;
+			}
 			setTimeout(generateFlash, 500);
 	} else {
 	gameOver();
