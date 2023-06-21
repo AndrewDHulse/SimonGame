@@ -16,7 +16,6 @@ h1{
 }
 .board {
     border-radius: 50%;
-    
     height: 350px;
     width: 350px;
     position: relative;
@@ -68,7 +67,7 @@ h1{
     border-top: 0;
     border-left: 0;
 }
-
+ 
 #green {
     background-color: green;
     opacity: .50;
@@ -110,7 +109,7 @@ h1{
     font-size: 25px;
     font-family: 'Amatic SC', cursive;
     font-family: 'Orbitron', sans-serif;
-    box-shadow: 5px 5px 30px 1px rgb(0,255,65);
+    box-shadow: 0px 0px 30px 1px rgb(0,255,65);
 }  
 
 #highlight-red{

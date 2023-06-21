@@ -34,7 +34,7 @@ function init(){
 	playerTurn=0;
 	sequence= [];
 	playerInput= [];
-	render();
+	renderMessage();
 }
 
 function handleClick(evt){
@@ -43,7 +43,7 @@ const colorKey=getKey(colors,selectedColor);
 	playerInput.push(parseInt(colorKey));
 	playSound(selectedColor);
 	checkInput();
-	render();
+	renderMessage();
 
 function getKey(obj, value){
 	return Object.keys(obj).find((key) => obj[key]===value);
@@ -67,7 +67,7 @@ function generateFlash(){
 
 	if (sequence.length === level){
 		playerInput =[];
-		render();
+		renderMessage();
 		playSequence();
 		playerTurn =2;
 	}
@@ -83,7 +83,7 @@ function playSequence() {
 		setTimeout(function(){
 			playerTurn = 2;
 			playerInput = [];
-			render();
+			renderMessage();
 			clearInterval(interval);
 		},1000);
 	  }
@@ -104,12 +104,12 @@ if (playerTurn !== 0){
 			setTimeout(generateFlash, 500);
 	} else {
 	gameOver();
-	render();
+	renderMessage();
 	}
 	}
 	if (playerInput.length > 0 && playerInput[playerInput.length-1] !== sequence[playerInput.length-1]){
 	gameOver();
-	render();
+	renderMessage();
 	}
 }
 }
@@ -123,10 +123,6 @@ function playSound(color){
 	setTimeout(function(){
 		cellEl.id=dullColor;
 	}, 500);
-}
-
-function render(){
-	renderMessage();
 }
 
 function renderMessage(){
@@ -152,6 +148,3 @@ function renderMessage(){
 			audioEl.play();
 		},500)
 	}
-
-console.log(playerInput);
-console.log(sequence);
