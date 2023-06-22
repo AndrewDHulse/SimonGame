@@ -248,19 +248,28 @@ h1{
     #tagline{
         font-size: 1.5em;
         letter-spacing: .5vmin;
-        margin-top: 0;
+        bottom: 0;
+        position: absolute;
+        left: 50%;
     }
 
     #highscore{
         width: 60%;
         font-size: 1em;
+        margin-top: 20vmin;
     }
     
     .board{
-        width: 50vmin;
-        height:50vmin;
+        width: 70vmin;
+        height:70vmin;
+        margin-top: 25vmin;
+
     }
     #gameInfo{
         font-size: 1em;
+    }
+    .volControl{
+        position: absolute;
+        bottom: 0;
     }
 }
