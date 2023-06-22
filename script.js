@@ -177,7 +177,7 @@ function gameOver(){
 
 function handleVolumeChange(){
 	const volume = volumeSlider.value;
-	volumeLabel.textContent = `Volume: ${volume}`
+	volumeLabel.textContent = `Vol: ${volume}`
 
 	const volumeValue = volume /100;
 	audioEls.forEach((audio)=>{
