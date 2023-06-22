@@ -188,6 +188,11 @@ h1{
     color: white;
 }
 
+#muteBtn{
+    color: white;
+    background-color: blue;
+}
+
 .volPic{
     width: 5vmin;
     height: 5vmin;
@@ -275,7 +280,4 @@ h1{
         position: absolute;
         bottom: 0;
     }
-.board div:hover{
-
-}
 }

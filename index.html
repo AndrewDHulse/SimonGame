@@ -18,6 +18,7 @@
     <audio id="blue-tone" preload="auto" src="sounds/blue.wav"></audio>
     <audio id="theme-tone" preload="auto" src="sounds/theme.wav"></audio>
     <audio id="gameOver-tone" preload="auto" src="sounds/gameOver.wav"></audio>
+    <audio id="bgm" preload="auto" src="sounds/simongbm.wav" loop="true" muted></audio>
 </div>
 
 <body>
@@ -37,6 +38,7 @@
         <div class="volume">
             <label for="volumeSlider" id="volumeLabel" volume: 50></label>
             <input type="range" id="volumeSlider" min="0" max="100" value="50">
+            <button id="muteBtn">Toggle BGM</button>
         </div>
     </div>
 

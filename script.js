@@ -26,13 +26,20 @@ const volumeSlider=document.getElementById('volumeSlider');
 const volumeLabel=document.getElementById('volumeLabel');
 const audioEls=document.querySelectorAll('.tones audio')
 const highscoreEl=document.getElementById('highscore')
-	/*----- event listeners -----*/
+const muteBtn= document.getElementById('muteBtn');
+
+/*----- event listeners -----*/
 redBtn.addEventListener('click', handleClick);
 yellowBtn.addEventListener('click', handleClick);
 greenBtn.addEventListener('click', handleClick);
 blueBtn.addEventListener('click', handleClick);
 playAgainBtn.addEventListener('click', handlePlayBtn);
-volumeSlider.addEventListener('input', handleVolumeChange)
+volumeSlider.addEventListener('input', handleVolumeChange);
+muteBtn.addEventListener('click', handleMute);
+window.addEventListener('load',function(){
+	const bgm =this.document.getElementById('bgm');
+	bgm.play();
+});
 
 	/*----- functions -----*/
 init()
@@ -184,3 +191,12 @@ function handleVolumeChange(){
 		audio.volume = volumeValue;
 	})
 };
+
+function handleMute(){
+	const BgmEl = document.getElementById('bgm');
+	if (BgmEl.muted){
+		BgmEl.muted= false;
+	} else {
+		BgmEl.muted= true;
+	}
+}
