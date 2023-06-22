@@ -72,6 +72,7 @@ which iterates through the array and switches the player's turn.
 The sound effects were created using Akai Pro's MPC Beats DAW. Each cell plays a specified note: red is Eb, yellow is Db, green is Fb(E), and blue is Gb.
 <img src="MPC.png"> 
 The volume image was created by using GIMP to refine and color a sketch. 
+
 <img src="gimp.png> 
 
 ## Acknowledgement
