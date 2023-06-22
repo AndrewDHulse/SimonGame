@@ -69,11 +69,14 @@ which iterates through the array and switches the player's turn.
 - Responsive design
 
 ## Sound Effects and Graphics
-The sound effects were created using Akai Pro's MPC Beats DAW. Each cell plays a specified note: red is Eb, yellow is Db, green is Fb, and blue is Gb.
+The sound effects were created using Akai Pro's MPC Beats DAW. Each cell plays a specified note: red is Eb, yellow is Db, green is Fb(E), and blue is Gb.
 <img src="MPC.png"> 
+The volume image was created by using GIMP to refine and color a sketch. 
+<img src="gimp.png> 
 
 ## Acknowledgement
-This work is based on Hasbro's Simon. Fonts obtained through https://fonts.google.com/
+This work is based on Hasbro's Simon. 
+Fonts obtained through https://fonts.google.com/
 
 <div style="display: flex; justify-content: center;">
 <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white">
