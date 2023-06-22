@@ -249,20 +249,19 @@ h1{
         font-size: 1.5em;
         letter-spacing: .5vmin;
         bottom: 0;
-        position: absolute;
-        left: 50%;
+
     }
 
     #highscore{
         width: 60%;
         font-size: 1em;
-        margin-top: 20vmin;
+        margin-top: 15vmin;
     }
     
     .board{
         width: 70vmin;
         height:70vmin;
-        margin-top: 25vmin;
+        margin-top: 15vmin;
 
     }
     #gameInfo{
