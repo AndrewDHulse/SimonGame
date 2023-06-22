@@ -27,6 +27,7 @@ const volumeLabel=document.getElementById('volumeLabel');
 const audioEls=document.querySelectorAll('.tones audio')
 const highscoreEl=document.getElementById('highscore')
 const muteBtn= document.getElementById('muteBtn');
+const bgm = document.getElementById('bgm');
 
 /*----- event listeners -----*/
 redBtn.addEventListener('click', handleClick);
@@ -35,11 +36,8 @@ greenBtn.addEventListener('click', handleClick);
 blueBtn.addEventListener('click', handleClick);
 playAgainBtn.addEventListener('click', handlePlayBtn);
 volumeSlider.addEventListener('input', handleVolumeChange);
-muteBtn.addEventListener('click', handleMute);
-window.addEventListener('load',function(){
-	const bgm =this.document.getElementById('bgm');
-	bgm.play();
-});
+muteBtn.addEventListener('click', handleToggle);
+
 
 	/*----- functions -----*/
 init()
@@ -192,11 +190,11 @@ function handleVolumeChange(){
 	})
 };
 
-function handleMute(){
-	const BgmEl = document.getElementById('bgm');
-	if (BgmEl.muted){
-		BgmEl.muted= false;
-	} else {
-		BgmEl.muted= true;
+function handleToggle(){
+	bgm.volume=0.15;
+	if (bgm.paused){
+		bgm.play();
+	}else{
+		bgm.pause();
 	}
 }
