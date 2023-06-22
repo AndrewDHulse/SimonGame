@@ -13,6 +13,7 @@ let playerTurn=0; //0, not in play; 1, computer turn; 2 human turn
 let difficulty=1000; 
 let highscore=0;
 let score=0;
+let flashLength=1000
 
 	/*----- cached elements  -----*/
 const messageEl=document.getElementById('gameInfo')
@@ -77,7 +78,6 @@ function generateFlash(){
 		playerInput =[];
 		renderMessage();
 		playSequence();
-		playerTurn =2;
 	}
 }
 
@@ -86,14 +86,14 @@ function playSequence() {
 	const interval = setInterval(() => {
 		const color=colors[sequence[i]];
 		playSound(color);
-	i++;
+		i++;
 	if (i === sequence.length) {
 		setTimeout(function(){
 			playerTurn = 2;
 			playerInput = [];
 			renderMessage();
 			clearInterval(interval);
-		},1000);
+		},flashLength);
 	  }
 	}, difficulty);
   }
@@ -101,7 +101,8 @@ function playSequence() {
 function checkInput() {
 if (playerTurn !== 0){
 	function checkArr(sequence, playerInput) {
-		return sequence.every((value, index) => value === playerInput[index]);
+		return sequence.every((value, index) => 
+		value === playerInput[index]);
 	}
 	if (playerInput.length === sequence.length) {
 		if (checkArr(sequence, playerInput)) {
@@ -112,8 +113,11 @@ if (playerTurn !== 0){
 			}
 			playerTurn = 1;
 			playerInput = [];
-			if (difficulty > 200){
+			if (difficulty > 300){
 				difficulty=difficulty-100;
+			}
+			if (flashLength > 400){
+				flashLength= flashLength-50;
 			}
 			setTimeout(generateFlash, 500);
 	} else {
@@ -163,6 +167,7 @@ function gameOver(){
 	playerInput= [];
 	sequence= [];
 	difficulty=1000;
+	flashLength=1000;
 	const audioEl= document.getElementById(`gameOver-tone`);
 	setTimeout(function(){
 		audioEl.play();
