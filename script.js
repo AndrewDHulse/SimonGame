@@ -80,7 +80,6 @@ function generateFlash(){
 	sequence.push(flash);
 
 	if (sequence.length === level){
-		playerInput =[];
 		renderMessage();
 		playSequence();
 	}
