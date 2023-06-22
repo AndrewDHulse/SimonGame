@@ -10,7 +10,6 @@ h1{
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-left: 75px;
 }
 #tagline{
     text-align: center;
@@ -35,12 +34,12 @@ h1{
     box-shadow: 0px 0px 30px 1px rgb(0,255,65);
     margin: 5vmin auto 10vmin;
     padding: 1vmin;
-    width: 450px;
+    width: 75vmin;
 }
 .board {
     border-radius: 50%;
-    height: 350px;
-    width: 350px;
+    height: 45vmin;
+    width: 45vmin;
     position: relative;
     display: flex;
     justify-content: center;
@@ -56,6 +55,7 @@ h1{
     height: 50%;
     display: flex;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .board div:hover {
@@ -183,9 +183,9 @@ h1{
 
 .volControl{
     display: inline-flex ;
-    position: absolute; 
+    position: sticky; 
     bottom: 0;
-    padding-bottom:5vmin ;
+    padding-bottom:2vmin ;
 }
 
 #volumeLabel{
