@@ -141,6 +141,7 @@ h1{
     box-shadow: 20px -25px 150px 10px red;
     border-top: 0;
     border-right: 0;
+    pointer-events: none;
 }
 
 #highlight-yellow{
@@ -152,6 +153,7 @@ h1{
     box-shadow: -20px -25px 150px 10px yellow;
     border-top: 0;
     border-left: 0;
+    pointer-events: none;
 }
 
 #highlight-green{
@@ -163,6 +165,7 @@ h1{
     box-shadow: 20px 25px 150px 10px green;
     border-bottom: 0;
     border-right: 0;
+    pointer-events: none;
 }
 
 #highlight-blue {
@@ -174,7 +177,9 @@ h1{
     box-shadow: -20px 25px 150px 10px blue;
     border-bottom: 0;
     border-left: 0;
+    pointer-events: none;
 }
+
 
 .volControl{
     display: inline-flex ;
@@ -184,7 +189,7 @@ h1{
 }
 
 #volumeLabel{
-color: white;
+    color: white;
 }
 
 .volPic{
@@ -203,6 +208,10 @@ color: white;
 
 .volPic:hover + .volume{
     display: block;
+}
+
+.unclickable{
+    pointer-events: none;
 }
 
 @keyframes pulse{

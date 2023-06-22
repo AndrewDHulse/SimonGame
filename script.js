@@ -144,10 +144,12 @@ function renderMessage(){
 		messageEl.innerText=`Wanna
 		Play?`;
 		messageEl.classList.add('idle');
+		messageEl.classList.remove('unclickable');
 	} else if (playerTurn === 1) { 
 		messageEl.innerText= `Level ${level}
 		Listen!`;
 		messageEl.classList.remove('idle');
+		messageEl.classList.add('unclickable');
 	} else if (playerTurn===2){
 	messageEl.innerText=`Level ${level}
 		your turn!`;
