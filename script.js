@@ -17,10 +17,13 @@ let flashLength=1000
 
 	/*----- cached elements  -----*/
 const messageEl=document.getElementById('gameInfo')
-const redBtn=document.getElementById('red');
-const yellowBtn =document.getElementById('yellow');
-const greenBtn =document.getElementById('green');
-const blueBtn=document.getElementById('blue');
+
+const colorBtns={
+	red: document.getElementById('red'),
+	yellow: document.getElementById('yellow'),
+ 	green: document.getElementById('green'),
+ 	blue: document.getElementById('blue')
+	};
 const playAgainBtn=document.getElementById('gameInfo');
 const volumeSlider=document.getElementById('volumeSlider');
 const volumeLabel=document.getElementById('volumeLabel');
@@ -30,10 +33,9 @@ const muteBtn= document.getElementById('muteBtn');
 const bgm = document.getElementById('bgm');
 
 /*----- event listeners -----*/
-redBtn.addEventListener('click', handleClick);
-yellowBtn.addEventListener('click', handleClick);
-greenBtn.addEventListener('click', handleClick);
-blueBtn.addEventListener('click', handleClick);
+Object.values(colorBtns).forEach(btn =>{
+	btn.addEventListener('click', handleClick);
+});
 playAgainBtn.addEventListener('click', handlePlayBtn);
 volumeSlider.addEventListener('input', handleVolumeChange);
 muteBtn.addEventListener('click', handleToggle);
@@ -138,7 +140,7 @@ if (playerTurn !== 0){
 function playSound(color){
 	const audioEl=document.getElementById(color + '-tone');
 	const cellEl=document.getElementById(color);
-	const dullColor=cellEl.id
+	const dullColor=cellEl.id;
 	cellEl.id= ('highlight-'+ color);
 	audioEl.currentTime=0;
 	audioEl.play();

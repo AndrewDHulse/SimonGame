@@ -61,6 +61,9 @@ function playSequence() {
 ```
 which iterates through the array and switches the player's turn. 
 
+## Getting Started
+
+
 ## Features
 - Highscore tracker
 - Sound effects and visual highlights 
