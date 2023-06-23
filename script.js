@@ -76,7 +76,6 @@ function handlePlayBtn(){
 function generateFlash(){
 	const flash = Math.floor(Math.random() * 4) + 1;
 	sequence.push(flash);
-
 	if (sequence.length === level){
 		renderMessage();
 		playSequence();

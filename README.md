@@ -62,7 +62,9 @@ function playSequence() {
 which iterates through the array and switches the player's turn. 
 
 ## Getting Started
+Click <a href="https://andrewdhulse.github.io/SimonGame/">this link</a> and hit the "Wanna play?" button. 
 
+A cell will light up and play a tone, simply repeat the sequence shown.
 
 ## Features
 - Highscore tracker
