@@ -54,21 +54,17 @@ function init(){
 }
 
 function handleClick(evt){
-const selectedColor=evt.target.id;
-const colorKey=getKey(colors,selectedColor);
+	const selectedColor=evt.target.id;
+	const colorKey=Object.keys(colors).find((key) =>
+		colors[key]===selectedColor);
 	playerInput.push(parseInt(colorKey));
 	playSound(selectedColor);
 	checkInput();
 	renderMessage();
-
-function getKey(obj, value){
-	return Object.keys(obj).find((key) => obj[key]===value);
-	}
 }
 
 function handlePlayBtn(){
 	const audioEl=document.getElementById('theme-tone');
-
 	if (playerTurn ===0){
 		audioEl.play();
 		init();
