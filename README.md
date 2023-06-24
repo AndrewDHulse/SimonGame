@@ -82,6 +82,7 @@ The volume image was created by using GIMP to refine and color a sketch.
 
 ## Acknowledgement
 This work is based on Hasbro's Simon. 
+
 Fonts obtained through https://fonts.google.com/
 
 <div style="display: flex; justify-content: center;">
