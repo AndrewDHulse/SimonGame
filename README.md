@@ -85,6 +85,7 @@ This work is based on Hasbro's Simon.
 
 Fonts obtained through https://fonts.google.com/
 
+
 <div style="display: flex; justify-content: center;">
 <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white">
 <img src="https://img.shields.io/badge/Gimp-657D8B?style=for-the-badge&logo=gimp&logoColor=FFFFFF">
