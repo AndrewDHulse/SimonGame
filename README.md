@@ -80,6 +80,10 @@ The volume image was created by using GIMP to refine and color a sketch.
 
 <img src="gimp.png"> 
 
+## Future Additions
+- Radio field added to pick different themes/tones
+- assign a consistent melody with the sequence
+
 ## Acknowledgement
 This work is based on Hasbro's Simon. 
 
