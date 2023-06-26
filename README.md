@@ -82,7 +82,8 @@ The volume image was created by using GIMP to refine and color a sketch.
 
 ## Future Additions
 - Radio field added to pick different themes/tones
-- assign a consistent melody with the sequence
+- Assign a consistent melody with the sequence
+- Use keyframes to give the box-shadows a flickering effect
 
 ## Acknowledgement
 This work is based on Hasbro's Simon. 
